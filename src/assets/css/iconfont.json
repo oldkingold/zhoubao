@@ -1,0 +1,37 @@
+{
+  "id": "1777766",
+  "name": "zhoubao",
+  "font_family": "iconfont",
+  "css_prefix_text": "zhobao-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "608179",
+      "name": "本书",
+      "font_class": "benshubooks13",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "1159905",
+      "name": "圆",
+      "font_class": "yuan",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "1851475",
+      "name": "直播课",
+      "font_class": "zhiboke",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "8165717",
+      "name": "分类",
+      "font_class": "fenlei",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    }
+  ]
+}

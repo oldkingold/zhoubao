@@ -1,0 +1,33 @@
+@font-face {font-family: "zhoubao";
+  src: url('iconfont.eot?t=1587709430630'); /* IE9 */
+  src: url('iconfont.eot?t=1587709430630#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAR8AAsAAAAACUgAAAQvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqFXIRiATYCJAMUCwwABCAFhG0HURv3B8gekkQyG7fwGKAoAJAgo3TaHsg+kZGqJA8AJD9yAKvY46+YKgTQX2u/74b4zpDMkomcvBPbf4okMauWCI1IJlZ44P+Yf1+sbGCRYqMRJY0mFseHDRQp/j9gg+3gmPHKGiwPaC7ZgQMcJQ1ns6qPCHvBf3H8B3iGCxN4MxCAIqYsMugZmrL5cMImAiAzniVsPpcGjyERQm4JOTFXyTXcRFzQswDW6X9P/lE5+ICSEuFWHafdtK3tK+35JNs2DSylbWyXZwJwOw1ggLIADmQeahnLaUbKYpTPfJeGbFAIFC1rWsnzzuddTBNsQY9kivgPD+AoggEpEiQaYRpGOTxPkzm2tBSqQFHaBFUgKO2CUswvSjpBAaiAZwCpQ8CmmcFQFO+VCsGX17QMe9wp2neyVm6GA5RlKoDcLemqTbkdiZEdQjZHa+hnmbBpx339thHu1u3rbN8AY7OiJRA53ss82mmqx3bmqmzCCpxNfF7vfuNGj2vXul29OlsSdTVYTmbAp8xQZp/y85KerjOPxalcb7fA+6EAfTms6qujYfZ6pOvUfZavkgd5uz0YE059wx/z4vn+EU+rvMMeco0cz9D7/qdQHmGowx78I87ivuEbp2TwY7HhHfSwyj/kKZ6Mbef5gRp36dYXe651pHs2nDrApPSqqBe7En8O1j/yg5lt50WuaLK4vcPf22GP6dXwp1JSlWgc1HPVdcGeQmX95k2veDrjQN3pvljJyCKLYdY/zP/84YdFpspSBHaR+sSxnh4/TlG4nlko4GfjUWhp36mvms/vkpvmvc352ijVzBkxdbitqtIVqI/85uvzsr+sWvp6oZ/QXiSvsz0o8RFK/C6RuSuwK1NzJgKJXwrLZtNsdYHd/s5wuBzvEoBspK6qaz/cFbsd/xKD2R/b/2VmZ+5QhG2scUWwn/4GPBAbbADMT2yKMwrmcXaUNQAA1qbfphAzeEfn9vlzNxzxvZodEG36JtQMAG6fTH7XBemybRAopOaeLaY8+i8YeMcvH7VSfjfJrFTVCABJXxXYKJwYTeeIw+V+OVJvLRzVJnhtoKyiwAhpCI4pCxJVVbAQGoCijBanq9wmcyK5AihtCQDhsBUom6PAOJxDcMw9kPi8AwtHcIKie0heUJUR+ECnBoQBNCI3EU9hhZH0RsDInwDWlAjNydfJM6DpvB/VVFZ7472ggFbGHt1iaw2DQYyGZdQDtwNJwiitYQEoo5IzjHRDVRUT9k2VFJZtAU1oAMEAaMhgm5BRKJiCUbsbAr7fnwBYJglBi2n7YZwBNDp+cqSS8iqmQPRKlFRt2zJ/Cgur1lQGhtcNp8FkSHM0AUmMYMjE8GUCQDFUGpkjlNagAnUanlZSWb9MXsYjAArhQ6QQQwo5FEKRPgRF50wSY1GvqXNtmoTi3eJ40rkAPAwoEvA2GwA=') format('woff2'),
+  url('iconfont.woff?t=1587709430630') format('woff'),
+  url('iconfont.ttf?t=1587709430630') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1587709430630#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "zhoubao" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zhobao-benshubooks13:before {
+  content: "\e643";
+}
+
+.zhobao-yuan:before {
+  content: "\e629";
+}
+
+.zhobao-zhiboke:before {
+  content: "\e653";
+}
+
+.zhobao-fenlei:before {
+  content: "\e624";
+}
+
