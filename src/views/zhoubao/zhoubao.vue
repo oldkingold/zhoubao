@@ -10,11 +10,11 @@
         <div class="flex_row" >
           <div class="nav_right" v-on:click="towxarticle('https://appmswvvg7z7791.h5.xiaoeknow.com/')">
             <van-icon size="18px" name="http://58jz.com.cn/image/zhoubao/icon/zhibos.png" />
-            <div>直播课</div>
+            <div>看播课</div>
           </div>
           <div class="nav_right" v-on:click="towxarticle('http://wx.58jz.com.cn/fine')">
             <van-icon size="18px" name="http://58jz.com.cn/image/zhoubao/icon/wangxiaos.png" />
-            <div>网课</div>
+            <div>上网课</div>
           </div>
           <router-link to='/contact'>
           <div class="nav_right" to="/contact">
@@ -31,7 +31,7 @@
         <!-- 分类 -->
         <div class="flex_row item_fl">
           <van-icon size="18px" class="iconfont" class-prefix="zhobao" name="benshubooks13" color="#ff884d"/>
-          <div>{{label}}实时|<span v-if="i==0">{{stage}}</span></div>
+          <div>{{label}}<span v-if="i==0">{{stage}}</span></div>
         </div>
         <!-- 文章 -->
         <div class="item_panel" v-for="article in list" :key="article.id" v-on:click="towxarticle(article.wx_url,'article',article.id)">
@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-      <div class="zhibo" >
+      <div class="zhibo" id="zhibo">
         <van-icon size="16px" name="http://58jz.com.cn/image/zhoubao/icon/zhibo.png" />
         <div>近期课程</div>
       </div>
@@ -83,16 +83,27 @@ export default {
       liveimgs:[
         
       ],
-      num:""
+      num:"",
     }
   },
   created() {
     var that = this;
-    that.num  = this.$route.query.page ? this.$route.query.page : ""
+    that.num = window.location.href.split("page=")[1].split("&")[0].split("#")[0]
+    console.log("----------")
+    console.log(window.location.href.split("page=")[1].split("#|\\&")[0])
+    console.log("----------")
+    // that.num = this.$route.query.page ? this.$route.query.page : ""
     var unique = Storage.get("58jzweekonly")
     this.axios.post('zhoubao/58jzweekonly',{num:that.num,unique:unique})
     .then(res => {
       Storage.set("58jzweekonly",res.data.str)
+      console.log(res)
+    }).catch(err => {
+      console.error(err); 
+    })
+    this.axios.post('zhoubao/wxconfig',{url:window.location.href})
+    .then(res => {
+      console.log(res.data.option)
       wxApi.wxRegister(res.data.wx,res.data.option)
       console.log(res)
     }).catch(err => {
@@ -101,7 +112,7 @@ export default {
   },
   mounted() {
     var that = this;
-    
+  
     this.axios.post('zhoubao/stage',{num:that.num})
     .then(res => {
       console.log(res)
@@ -119,11 +130,29 @@ export default {
     .catch(err => {
       console.error(err); 
     })
-
     
+  },
+  updated(){
+    var readwhere = Storage.get("readwhere")
+    var js = Storage.get("readwherejs")
+    if(js != "") {
+      js = parseInt(js)
+      js += 1
+      Storage.set("readwherejs",js,600000)
+    }
+    if(readwhere!="" && js == 2) {
+      document.documentElement.scrollTop=readwhere;
+      Storage.remove("readwhere")
+      Storage.remove("readwherejs")
+    }
   },
   methods: {
     towxarticle: function(wx_url,type="",id="") {
+      if(type == "article") {
+        console.log(document.documentElement.scrollTop);
+        Storage.set("readwhere",document.documentElement.scrollTop,600000)
+        Storage.set("readwherejs",0,600000)
+      }
       var unique = Storage.get("58jzweekonly")
       if(type!="" && id!="" && unique!="") {
         this.axios.post('zhoubao/clickstatistics',{num:this.num,type:type,id:id,unique:unique})
@@ -191,6 +220,7 @@ export default {
   padding-bottom: 20px;
   color: #333537;
   line-height: 22px;
+  font-weight: bold;
 }
 .item_fl span {
     font-size: 14px;
@@ -247,7 +277,7 @@ export default {
 }
 .zhibo .van-icon {
   margin-right: 6px;
-  margin-bottom: 2px;
+  margin-bottom: 2px; 
 }
 .my-swipe {
   width: 30px;

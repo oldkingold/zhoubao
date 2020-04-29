@@ -6,6 +6,7 @@ import axios from 'axios'
 import VueClipboard from 'vue-clipboard2'
 import "./assets/css/iconfont.css"
 
+
 import { Button,Sticky,Image,Icon,Swipe,SwipeItem,Cell,CellGroup,Tag,Notify,NavBar } from 'vant';
 
 Vue.use(VueClipboard)
