@@ -44,6 +44,7 @@
           </div>
         </div>
       </div>
+
       <div class="zhibo" id="zhibo">
         <van-icon size="16px" name="http://58jz.com.cn/image/zhoubao/icon/zhibo.png" />
         <div>近期课程</div>
@@ -56,10 +57,15 @@
             />
         </van-swipe-item>
       </van-swipe>
+
+      <div class="zhibo" id="zhibo">
+        <van-icon size="16px" name="http://58jz.com.cn/image/zhoubao/icon/wangqi.png" />
+        <div>往期回顾</div>
+      </div>
     </div>
     
     <div class="disclaimer">
-      <div>免责声明：</div>
+      <div>声明：</div>
       <div>
         声明：本周刊仅限信息分享使用！部分内容或图片来源于网络，版权归原作者所有，如有侵权敬请后台联系，我们将及时处理！联系邮箱：scy@58jz.com.cn
       </div>
@@ -134,6 +140,7 @@ export default {
   },
   updated(){
     var readwhere = Storage.get("readwhere")
+    var readwherebody = Storage.get("readwherebody")
     var js = Storage.get("readwherejs")
     if(js != "") {
       js = parseInt(js)
@@ -142,15 +149,17 @@ export default {
     }
     if(readwhere!="" && js == 2) {
       document.documentElement.scrollTop=readwhere;
+      document.body.scrollTop=readwherebody;
       Storage.remove("readwhere")
+      Storage.remove("readwherebody")
       Storage.remove("readwherejs")
     }
   },
   methods: {
     towxarticle: function(wx_url,type="",id="") {
       if(type == "article") {
-        console.log(document.documentElement.scrollTop);
         Storage.set("readwhere",document.documentElement.scrollTop,600000)
+        Storage.set("readwherebody",document.body.scrollTop,600000)
         Storage.set("readwherejs",0,600000)
       }
       var unique = Storage.get("58jzweekonly")

@@ -21,7 +21,7 @@
         <!-- 使用 title 插槽来自定义标题 -->
         <template #title>
             <span class="custom-title">微信(小孙老师)</span>
-            <span class="custom-content">13958193848</span>
+            <span class="custom-content">qq2419541093</span>
         </template>
         <template #right-icon>
             <span v-clipboard:copy="fuzhi" v-clipboard:success="onCopy"><van-tag plain color="#41a9fa">复制</van-tag></span>
